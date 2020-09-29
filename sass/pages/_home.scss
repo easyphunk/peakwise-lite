@@ -2,3 +2,9 @@
     background-color: $color-grey-light-1;
     padding: 15rem 0;
 }
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(to right bottom, rgba(0, 0, 1, .7), rgba(0, 0, 1, .7)), url('../../img/back2.jpg');
+    background-size: cover;
+}
