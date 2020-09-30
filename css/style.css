@@ -94,11 +94,72 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
+.u-margin-top-big {
+  margin-top: 8rem; }
+
 .u-dark-shadow:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5) !important; }
 
 .u-dark-shadow:active {
   box-shadow: 0 0.25rem 0.8rem rgba(0, 0, 0, 0.5) !important; }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
+.blog-post {
+  width: 75%;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .blog-post > * {
+    transform: skewX(12deg); }
+  .blog-post__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative; }
+  .blog-post img {
+    height: 100%;
+    transform: scale(1.4);
+    transition: all .5s; }
+  .blog-post__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: #fff;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    z-index: 2; }
+  .blog-post:hover .blog-post__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .blog-post:hover img {
+    transform: scale(1);
+    -webkit-filter: blur(3px) brightness(70%);
+    filter: blur(2px) brightness(70%); }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -145,51 +206,6 @@ body {
 .btn-text:active {
   box-shadow: 0 0.4rem 0.3rem rgba(245, 127, 6, 0.5);
   transform: translateY(0); }
-
-.composition {
-  position: relative; }
-  .composition__photo {
-    width: 55%;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
-    border-radius: 5px;
-    background-color: #000;
-    position: absolute;
-    z-index: 1;
-    transition: all .2s; }
-    .composition__photo--p1 {
-      left: 0;
-      top: -2rem; }
-    .composition__photo--p2 {
-      right: 0;
-      top: 2rem; }
-    .composition__photo--p3 {
-      top: 10rem;
-      left: 20%; }
-    .composition__photo:hover {
-      transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.8);
-      z-index: 2; }
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95); }
-
-.feature-box {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
-  padding: 2.5rem;
-  text-align: center;
-  border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  transition: transform .2s; }
-  .feature-box__icon {
-    font-size: 6rem;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    background-image: linear-gradient(to right, #ffa64e, #d46e05);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent; }
-  .feature-box:hover {
-    transform: translateY(-1.5rem) scale(1.03); }
 
 .card {
   perspective: 150rem;
@@ -267,6 +283,51 @@ body {
       font-size: 3rem;
       font-weight: 100; }
 
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    background-color: #000;
+    position: absolute;
+    z-index: 1;
+    transition: all .2s; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      top: 10rem;
+      left: 20%; }
+    .composition__photo:hover {
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.8);
+      z-index: 2; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .2s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #ffa64e, #d46e05);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
 .section-about {
   background-color: #f7f7f7;
   padding: 15rem 0; }
@@ -278,6 +339,10 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
+  padding: 15rem 0; }
+
+.section-blog-posts {
+  position: relative;
   padding: 15rem 0; }
 
 .header {
