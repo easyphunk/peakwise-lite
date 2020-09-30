@@ -13,3 +13,12 @@
 .u-margin-bottom-small {
     margin-bottom: 1.5rem;
 }
+
+.u-dark-shadow {
+    &:hover {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .5) !important;
+    }
+    &:active {
+        box-shadow: 0 .25rem .8rem rgba($color-black, .5) !important;
+    }
+}
